@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Form</title>
+</head>
+<style type="text/css">
+
+	.container
+	{
+		width: 40%;
+		margin: 10%;
+	}
+	input[type = text], input[type=number], input[type=email]
+	{
+		box-sizing: border-box;
+		width: 100%;
+		padding: 2%;
+		background-color: lightgray;
+		border: 1px solid;
+
+	}
+
+    h1,h2
+    {   
+          text-transform: uppercase;
+        font-family: verdana;
+        font-size: 150%;
+    }
+   
+
+	 input[type=submit] {
+  background-color: rgba(0,255,255,0.5);
+
+  border: none;
+  color: black;
+  padding: 8px 12px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  
+ width: 100%
+  
+}
+.space
+{
+	padding: 1%;
+}
+</style>
+<body>
+	<center>
+<div class="container">
+<center> <h1 id="names"></h1></center>
+           <center> <h2 id="prices"></h2></center>
+	
+		<div class="space"><input type="text" id ="name" placeholder="Your Full Name"></div>
+		
+		<div class="space"><input type="number" id="number" placeholder="Contact Number"></div>
+		<div class="space"><input type="email" id="email" placeholder="Email Id"></div>
+		<div class="space"><input type="submit" id="submit" value="Book Now" onclick="a()" ></div>
+
+</div>
+</center>
+</body>
+
+
+<script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBI4PXO13seM3rVu0yEEVSkOuflLjGG6Y0",
+    authDomain: "project1-400f9.firebaseapp.com",
+    databaseURL: "https://project1-400f9.firebaseio.com",
+    projectId: "project1-400f9",
+    storageBucket: "project1-400f9.appspot.com",
+    messagingSenderId: "243549019154"
+  };
+  firebase.initializeApp(config);
+</script>
+
+
+<script type="text/javascript">
+
+   var params = (new URL(document.location)).searchParams;
+    var item = params.get("item");
+    var price = params.get("price");
+   
+  
+     var names = document.getElementById("names").innerHTML = item;
+   
+     document.getElementById('prices').innerHTML="Your Total Is: " + price;
+
+
+
+	function a() {
+
+
+  var name = document.getElementById('name').value;
+  var number = document.getElementById('number').value;
+  var email = document.getElementById('email').value;
+  var time = new Date();
+  alert("Username : " +name+ "\n Contact no. " +number+ "\nEmail : " +email+ "\nItem : "+item+"\nPrice : "+price + "\nTime : " +time);
+
+	
+
+  //Pushing into Firebase
+
+firebase.database().ref('dash/').push({
+
+Name : document.getElementById("name").value,
+Contact : document.getElementById("number").value,
+Email : document.getElementById("email").value,
+Item : item,
+Price : price,
+Date : Date() 
+});
+
+
+}
+</script>
+
+</html>

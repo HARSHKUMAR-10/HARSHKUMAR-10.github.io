@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food</title>
+</head>
+
+
+
+<style type="text/css">
+  .p
+  {
+    font-family: arial;
+    font-size: 200%;
+    text-align: center;
+    padding: 10px;
+
+    
+  }
+
+.imgalg /*For the image gallery*/
+{
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+.photos {
+  margin: 20px;
+  
+  float: left;
+  width: 400px;
+  
+}
+
+
+
+.desc /* The text below the image*/
+{
+  font-family: arial;
+  text-align: center;
+  color: gray;
+  font-size: 150%;
+}
+
+.photo img
+{
+  width: 100%;
+  height: auto;
+}
+
+.space /*Space from the top*/
+{
+
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: rgba(255,255,255,0.6);
+  display: inline-block;
+width: 88%;
+margin: 6%;
+}
+
+
+.space1 /*Space between sections*/
+{
+  margin: 10%;
+  margin-bottom: 5%;
+}
+
+hr
+{
+  width: 80%;
+  background-color: gray;
+}
+.footer
+{
+  float: left;
+  width: 33.33%;
+}
+.footer1
+{
+  background-color: white;
+}
+
+@media(max-width: 768px) {
+  .footer
+  {
+    width: 100%;
+  }
+}
+
+.h:hover
+{
+  background-color: #D3D3D3;
+
+}
+.ftxt  /*For the text in the footer*/
+{
+  background-color: gray;
+  color: white;
+  font-size: 150%;
+  margin: 5px;
+  margin-bottom:  16px;
+  margin-top: 16px;
+  padding:1px;
+  line-height: 300%
+}
+
+.head
+{
+  width: 33.33%;
+  float: left;
+}
+ .header
+ {
+  position: fixed;
+  width: 100%;
+  background-color: rgba(255,255,255,0.9);
+  display: inline-block;
+ }
+
+ 
+.h1:hover
+{
+  opacity: 0.4;
+}
+
+ body
+ { 
+  margin:0;
+   
+ }
+
+input[type=submit]
+ {
+  padding: 6px;
+  background-color: rgb(1,86,190);
+  color: white;
+  border-radius: 10px;
+  width: 40%;
+  height: 3%;
+  font-size: 150%;
+ }
+
+ input[type=button]
+ {
+  padding: 6px;
+  background-color: rgb(1,86,190);
+  color: white;
+  border-radius: 10px;
+  width: 40%;
+  height: 3%;
+  font-size: 150%;
+ }
+
+ .price
+ {
+  padding-top: 0;
+  font-size: 150%;
+ }
+
+ .new
+ {
+  padding-top: 5px;
+ }
+ body
+ {
+  background-image: url("fgb1.jpg");
+  background-attachment: fixed;
+  margin: 0;
+  width: 100%;
+
+ }
+</style>
+<body>
+  
+  <!-- The header of the website -->
+  <div class="header">
+    <div class="head">
+     <a href="cart.html"> <img src="sidebar.png" class="h1" height="50px" width="50px" style="padding:30px;"></a>
+    </div>
+    <div class="head">
+      <center><p class="p"> Order Food </p></center>
+    </div>
+    <div class="head">
+      <p class="p" style="text-align: right; padding-right:  30px;"><a href="hostelhome.html"> Home</a></p>
+    </div>
+  </div>  
+  <!-- The photo section -->
+  <div style="padding-top: 10%">
+    
+  </div>
+<div class="space">
+
+  <!-- burger-->
+<div class="photos">
+  <img src="burger.jpg" width="400">
+  <div class="new">
+    <form action="form.html" method="GET">
+    <input type="text" value= "burger and fries" name="item" style="display:none">
+    <input type="submit"  name="submit" value="BUY" style="margin-top: 18px">
+    <input type="text" value= "$200" name="price" style="display:none">
+     <p style="float: right;" class="price"> $200 </p></div></form><br><form action="food.html" method="GET">
+      <input type="text" value= "Burger and Fries" name="item" style="display:none">
+      <input type="text" value= "$200" name="price" style="display:none">
+    <input type="submit" name="Cart" value="Add To Cart"  onclick="add()"> 
+    <hr style="width:100%"></form>
+  <div class="p">Burger and Fries</div>
+  
+
+</div>  
+<!-- cheeseballs -->
+<div class="photos">
+  <img src="cheeseballs.jpg" width="400">
+  <div class="new">
+    <form action="form.html" method="GET">
+    <input type="text" value= "cheese balls" name="item" style="display:none">
+    <input type="submit"  name="submit" value="BUY" style="margin-top: 18px">
+    <input type="text" value= "$120" name="price" style="display:none">
+     <p style="float: right;" class="price"> $120 </p></form></div><br>
+     <form action="food.html" method="GET">
+      <input type="text" value= "Cheeseballs" name="item" style="display:none">
+      <input type="text" value= "$120" name="price" style="display:none">
+    <input type="submit" name="Cart" value="Add To Cart"  onclick="add()"> 
+     <hr style="width:100%"></form>
+  <div class="p">Cheeseballs</div>
+</div>
+
+<!-- sandwich -->
+<div class="photos">
+  <img src="sandwich.jpg" width="400">
+  <div class="new">
+    <form action="form.html" method="GET">
+    <input type="text" value= "sandwich" name="item" style="display:none">
+    <input type="submit"  name="submit" value="BUY" style="margin-top: 18px"> 
+    <input type="text" value= "$120" name="price" style="display:none">
+    <p style="float: right;" class="price"> $120 </p></form></div><br>
+    <form action="food.html" method="GET">
+         <input type="text" value= "Sandwich" name="item" style="display:none">
+      <input type="text" value= "$120" name="price" style="display:none">
+    <input type="submit" name="Cart" value="Add To Cart"  onclick="add()"> 
+     <hr style="width:100%"></form>
+  <div class="p"  name="item" value="Sandwich">Cheese Sandwich</div>
+</div>
+
+
+<!-- coffee -->
+<div class="photos">
+  <img src="coffee.jpg" width="400">
+  <div class="new">
+    <form action="form.html" method="GET">
+    <input type="text" value= "coffee" name="item" style="display:none">
+    <input type="submit"  name="submit" value="BUY" style="margin-top: 18px"> 
+    <input type="text" value= "$20" name="price" style="display:none">
+    <p style="float: right;" class="price"> $20 </p></div></form><br>
+    <form action="food.html" method="GET">
+        <input type="text" value= "Coffee" name="item" style="display:none">
+      <input type="text" value= "$20" name="price" style="display:none">
+    <input type="submit" name="Cart" value="Add To Cart"  onclick="add()"> 
+  <hr style="width:100%"></form>
+   <div class="p">Cold Coffee</div>
+</div>
+
+</div>
+
+<br><br><br>
+<!-- Next photo grid-->
+<div class="space">
+
+<!-- ramen-->
+<div class="photos">
+  <img src="ramen.jpg" width="400">
+  <div class="new">
+    <form action="form.html" method="GET">
+    <input type="text" value= "ramen" name="item" style="display:none">
+    <input type="submit"  name="submit" value="BUY" style="margin-top: 18px"> 
+    <input type="text" value= "$100" name="price" style="display:none">
+    <p style="float: right;" class="price"> $100 </p></form></div><br>
+    <form action="food.html" method="GET">
+        <input type="text" value= "Ramen" name="item" style="display:none">
+      <input type="text" value= "$100" name="price" style="display:none">
+    <input type="submit" name="Cart" value="Add To Cart"  onclick="add()"> 
+    <hr style="width:100%"></form>
+  <div class="p">Ramen</div>
+</div>
+
+<!-- garlic bread -->
+<div class="photos">
+  <img src="garlicbread.jpg" width="400">
+  <div class="new">
+    <form action="form.html" method="GET">
+    <input type="text" value= "garlic bread" name="item" style="display:none">
+    <input type="submit"  name="submit" value="BUY" style="margin-top: 18px"> 
+    <input type="text" value= "$320" name="price" style="display:none">
+    <p style="float: right;" class="price"> $320 </p></div></form><br>
+    <form action="food.html" method="GET">
+         <input type="text" value= "Garlic Bread" name="item" style="display:none">
+      <input type="text" value= "$400" name="price" style="display:none">
+    <input type="submit" name="Cart" value="Add To Cart"  onclick="add()"> 
+     <hr style="width:100%"></form>
+  <div class="p">Garlic Bread</div>
+</div>
+
+<!-- momos -->
+<div class="photos">
+  <img src="momos.jpg" width="400">
+  <div class="new">
+    <form action="form.html" method="GET">
+    <input type="text" value= "momos" name="item" style="display:none">
+    <input type="submit"  name="submit" value="BUY" style="margin-top: 18px"> 
+    <input type="text" value= "$220" name="price" style="display:none">
+    <p style="float: right;" class="price"> $220 </p></form></div><br>
+    <form action="food.html" method="GET">
+         <input type="text" value= "Momos" name="item" style="display:none">
+      <input type="text" value= "$220" name="price" style="display:none">
+    <input type="submit" name="Cart" value="Add To Cart"  onclick="add()"> 
+     <hr style="width:100%"></form>
+  <div class="p">Steamed Momos</div>
+</div>
+
+<!-- pizza -->
+<div class="photos">
+  <img src="pizza.jpg" width="400">
+  <div class="new">
+    <form action="form.html" method="GET">
+    <input type="text" value= "pizza" name="item" style="display:none">
+    <input type="submit"  name="submit" value="BUY" style="margin-top: 18px"> 
+    <input type="text" value= "$3200" name="price" style="display:none">
+    <p style="float: right;" class="price"> $3200 </p></div><br></form>
+    <form action="food.html" method="GET">
+        <input type="text" value= "Pizza" name="item" style="display:none">
+      <input type="text" value= "$3200" name="price" style="display:none">
+    <input type="submit" name="Cart" value="Add To Cart"  onclick="add()"> 
+    <hr style="width:100%"></form>
+  <div class="p">Pizza</div>
+</div>
+</div>
+<hr>
+
+</form>
+</body>
+<script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBI4PXO13seM3rVu0yEEVSkOuflLjGG6Y0",
+    authDomain: "project1-400f9.firebaseapp.com",
+    databaseURL: "https://project1-400f9.firebaseio.com",
+    projectId: "project1-400f9",
+    storageBucket: "project1-400f9.appspot.com",
+    messagingSenderId: "243549019154"
+  };
+  firebase.initializeApp(config);
+</script>
+<script type="text/javascript">
+ 
+  document.body.style.zoom = "67%"
+
+
+   var params = (new URL(document.location)).searchParams;
+    var item = params.get("item");
+    var price = params.get("price");
+   firebase.database().ref('cart/').push({
+
+Item : item,
+Price : price
+});
+   
+function add()
+{ 
+  alert("Item Added to Cart!");
+  
+
+}
+</script>
+</html>

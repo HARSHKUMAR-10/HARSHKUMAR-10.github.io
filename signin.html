@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Login</title>
+</head>
+<style type="text/css">
+	body
+	{
+		background-color: rgb(231,247,247);
+	}
+
+	.div /*For the body of the login section*/
+	{
+		height: 50%;
+		width:70%;
+		border-radius: 20px;
+		background-color: white;
+		
+	
+		
+	}
+
+	.divh /*For the upper container section of the login body*/
+	{
+			background-image: url("https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX3486593.jpg");
+			overflow: hidden;
+            
+			height: 50%;
+			opacity: 0.8;
+			border-top-left-radius: 25px;
+			border-top-right-radius: 25px;
+	}
+
+	.divl /*For the lower section of the login body*/
+	{
+		padding: 2%;
+	}
+	tr
+	{
+		padding-left: 10%;
+		
+	}
+	td
+	{   
+		padding-right: 10%
+	}
+	.p
+	{
+		font-family: courier;
+		font-size: 30px;
+		font-weight: bolder;
+		color: white;
+		padding: 5%
+
+	}
+
+	.p1
+	{
+		font-family: arial;
+		color: gray;
+		padding-left: 20%;
+	}
+
+	.text
+	{
+		width: 100%;
+		margin-bottom: 2%
+		padding:2%;
+	}
+
+	.a
+	{
+		font-family: arial;
+		color: gray;
+		text-align: right;
+		font-size: 12px;
+		padding-left: 5%;
+	}
+
+	.a:hover /*To apply hover effect in the Remember me and forgot password part*/
+	{
+		color: blue;
+	}
+
+	.b
+	{
+		text-align: center;
+		padding-left:5%;
+		padding-right: 5%;
+	}
+
+	input[type=button] /*Designing the button*/
+	{
+  		width: 100%;
+  		background-color: #4CAF50;
+  		color: white;
+  		padding: 14px 20px;
+  		margin: 8px 0;
+  		border: none;
+  		border-radius: 25px;
+  
+	}
+
+	input[type=button]:hover /*hover effect in the button*/
+	{
+  		background-color: #45a049;
+
+
+</style>
+<body>
+	<center>
+	<div class="div">
+		<div class="divh">
+				<center><p class="p">SIGN IN</p></center>
+		</div>
+		<table width="100%"> 
+		<div class="divl">
+
+			<tr>
+				<td><p class="p1">Username</p></td>
+				<td><input type="text" name="Username" placeholder="Enter Username" class="text"></td>
+			</tr>
+			<tr>
+				<td><p class="p1">Password</p></td>
+				<td><input type="Password" name="Password" placeholder="Enter Password" class="text"></td>
+			</tr>
+			<tr>
+				<td>
+				<div class="a">
+					<p><input type="checkbox" name="remember"> Remember ME</p>
+				</div>
+				</td>
+				<td>
+				<div class="a">
+					<p><input type="checkbox" name="forgot">Forgot Password</p>
+				
+				</div>
+			</td>
+			</tr>
+			<tr>
+				<td colspan="2" class="b">
+					<input type="button" name="login" value="Login" style="padding-left: 5%">
+				</td>	
+			</tr>
+		</div>
+	</table>
+	</div>	
+	</center>	
+</body>
+</html>

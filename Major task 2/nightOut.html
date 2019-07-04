@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Night Out </title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<style type="text/css">
+
+
+	table
+	{
+		width: 60%
+	}
+
+	tr
+	{
+		width: 100%;
+	}
+
+	td
+	{
+		width: 50%;
+		text-align: left;
+		padding: 10px;
+		font-size: 150%;
+		font-family: Verdana;
+		color: white;
+	}
+
+
+	input[type = text] , select, textarea, input[type=date]
+	{
+		width: 100%;
+		border: 1px solid gray;
+		padding: 5px;
+	}
+
+	.num
+	{
+		width: 100%;
+		border: 1px solid gray;
+		padding: 5px;
+	}
+
+	body
+	{
+		width: 100%;
+		height: 100%;
+	
+		margin: 0;
+		background-image: url("n1.png");
+		
+		background-repeat: no-repeat;
+	}
+
+	h1
+	{
+		font-size: 300%;
+		color: white;
+		font-family: verdana;
+
+	}
+
+
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: rgba(0,255,255,0.5);;
+ 
+  border: none;
+  color: white;
+  padding: 8px 12px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 80%;
+  font-family: verdana;
+}
+
+.con
+{
+	background-color: rgba(255,255,255,0.1);
+	padding: 1%;
+	width: 75%
+
+}
+@media(max-width: 500px)
+	{
+		tr
+		{
+			width: 80%;
+		}
+	}
+@media(max-width: 500px)
+{
+	.con
+	{	background-color: rgba(0,0,0,0);
+		padding: 5%;
+	width: 70%	
+	}
+}
+</style>
+<body onload="zoom()">
+<center>
+
+	<center><h1>NIGHT OUT PASS</h1></center>
+	<div >
+	<div class="con">
+		
+		<table >
+		
+			<tr>
+				<td>Name of Student</td>
+				<td><input type="text" name="Name" placeholder="Enter your Name" id="name"></td>
+			</tr>
+			<tr>
+				<td>Hostel</td>
+				<td>
+					<select id="select">
+						<option>H-1</option>
+						<option>H-2</option>
+						<option>H-3</option>
+						<option>H-4</option>
+						<option>H-5</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>Room</td>
+				<td><input type="text number" name="Room" placeholder="Enter Room No." class="num" id="room"></td>
+			</tr>
+			<tr>
+				<td>Absence from : <input type="date" name="From" id="from"></td>
+				<td>To : <input type="date" name="To" id="To"></td>
+			</tr>
+			<tr>
+				<td>Reason for absence</td>
+				<td><input type="text" name="Reason" placeholder="Enter your Reason" id="reason"></td>
+			</tr>
+			
+			<tr>
+				<td>Address During Absence</td>
+				<td><textarea rows="2" id="Address"></textarea></td>
+			</tr>
+			<tr>
+				<td>Contact No.</td>
+				<td><input type="number" name="Contact" maxlength="10" class="num" id="contact"> </td>
+			</tr>
+
+			<tr>
+				<td><input type="submit" name="Submit"  value="Submit" onclick="submit()"></td>
+				<td ><input type="button" name="View pass" value="View Submitted OutPass" onclick="b()" ></td>
+			</tr>
+
+		</table>
+	/</div>
+</div>
+</center>
+</body>
+
+<script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBI4PXO13seM3rVu0yEEVSkOuflLjGG6Y0",
+    authDomain: "project1-400f9.firebaseapp.com",
+    databaseURL: "https://project1-400f9.firebaseio.com",
+    projectId: "project1-400f9",
+    storageBucket: "project1-400f9.appspot.com",
+    messagingSenderId: "243549019154"
+  };
+  firebase.initializeApp(config);
+</script>
+
+
+<script type="text/javascript">
+	
+function zoom()
+{
+	document.body.style.zoom = "80%";
+}
+
+function submit()
+{
+var nme = document.getElementById("name").value;
+var hostel = document.getElementById("select").value;
+var room = document.getElementById("room").value;
+var rsn = document.getElementById("reason").value;
+var add = document.getElementById("Address").value;
+var from = document.getElementById("from").value;
+var to = document.getElementById("To").value;
+var contact = document.getElementById("contact").value;
+
+if(nme=="")
+{
+	alert("Enter Name");
+}
+else if(hostel == "Select")
+{
+	alert("Enter Hostel")
+}
+else if(room=="")
+{
+	alert("Enter Room number")
+}
+
+else if(from=="")
+{
+	alert("Enter the date when you will Leave ")
+}
+else if(to=="")
+{
+	alert("Enter the date when you will arrive")
+}
+else if(rsn=="")
+{
+	alert("Enter your reason")
+}
+
+else if(add=="")
+{
+	alert("Enter Address")
+}
+else if(contact=="")
+{
+	alert("Enter your contact number")
+}
+else{ 
+ firebase.database().ref('NightOut/').push({
+
+	 Name : document.getElementById("name").value,
+	 Hostel : document.getElementById("select").value,
+	 Room : document.getElementById("room").value,
+	 Reason : document.getElementById("reason").value,
+	 Address : document.getElementById("Address").value,
+	 From : document.getElementById("from").value,
+	 To : document.getElementById("To").value,
+	 Contact : document.getElementById("contact").value
+}); 
+
+alert("Form Details Submitted")
+ }
+
+}
+
+function b()
+{
+	var answer = confirm("The Form is Submitted. View the Out Pass??")
+if (answer){
+		
+		window.location = "npass.html";
+	}
+	else{
+		window.location="hostelhome.html"
+	}
+}
+
+
+</script>
+</html>

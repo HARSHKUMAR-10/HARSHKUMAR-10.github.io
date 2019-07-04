@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Out Pass</title>
+</head>
+
+<style type="text/css">
+	.con
+	{
+		width: 60%;
+		height: 100%;
+		background-color: rgba(0,0,0,0.5);
+		overflow: hidden;
+		margin: 10%;
+		
+	}
+	.con1
+	{
+		width: 60%;
+		height: 100%;
+		background-color: rgba(0,0,0,0.5);
+		overflow: hidden;
+		margin: 10%;
+		margin-top: 2%
+	}
+
+	.para
+	{
+		font-size: 150%;
+		font-family: verdana;
+		color: white;
+	}
+	a
+	{
+		font-family: Verdana;
+		font-size: 150%;
+		color: white;
+		text-align: center;
+	}
+	.day
+	{
+		width: 100%;
+		background-repeat: no-repeat;
+		opacity: 0.8;
+		background-image : url("d1.jpg");
+		padding: 6%;
+	}
+	.day:hover
+	{
+		opacity: 1;
+	}
+
+	.night
+	{
+		width: 100%;
+		background-repeat: no-repeat;
+		opacity: 0.8;
+		background-image : url("nit.jpg");
+		padding: 6%;
+
+	}
+
+	.night:hover
+	{
+		opacity: 1;
+	}
+
+	body
+	{	width: 100%;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-attachment: fixed;
+		background-size: cover;
+		background-image: url("out.jpg");
+	}
+</style>
+<body>
+
+<center>
+	<div class="con1" id="div" onload="b()">
+	<p class="para">Dear Hostel Resident</p>
+	<p class="para">On the basis of the feedbck received from hostel residents, a facilitating online out pass system is being implemented. </p>
+	
+</div>
+<div class="con">
+<div  class= "day">
+	<a href="DayOut.html"> Day Out </a>
+</div>
+<div class="night">
+	<a href="nightOut.html"> Night Out </a>
+</div>
+</div>
+
+
+</center>
+</body>
+
+<script type="text/javascript">
+	function b(){
+	setTimeOut(function a()
+	{
+		document.getElementById("div").innerHTML = ""
+	}, 3000)}
+</script>
+</html>

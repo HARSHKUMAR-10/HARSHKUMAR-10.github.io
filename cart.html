@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dashboard</title>
+  
+</head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<style type="text/css">
+	h1
+	{
+		text-align: center;
+		font-family: verdana;
+		margin: 3%; 
+	}
+</style>
+<body>
+	<h1>Cart</h1>
+	<center><table class="table table-striped">
+  <thead>
+    <tr>
+      
+      <th scope="col">Item</th>
+      <th scope="col">Price</th>
+      
+    </tr>
+    
+  </thead>
+  <tbody id="taBody">
+    
+  </tbody>
+</table></center>
+</body>
+
+<script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBI4PXO13seM3rVu0yEEVSkOuflLjGG6Y0",
+    authDomain: "project1-400f9.firebaseapp.com",
+    databaseURL: "https://project1-400f9.firebaseio.com",
+    projectId: "project1-400f9",
+    storageBucket: "project1-400f9.appspot.com",
+    messagingSenderId: "243549019154"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+
+  <script type="text/javascript">
+  	$(document).ready(function(){
+
+  		var rootRef = firebase.database().ref().child("cart");
+  		rootRef.on("child_added", snap=>{
+
+  			
+  			var item = snap.child("Item").val();
+  			var price = snap.child("Price").val();
+  		
+
+  		$("#taBody").append("<tr><td>"+item+"</td><td>"+price+"</td></tr>");
+  		});
+
+  	});
+  </script>
+
+</html>

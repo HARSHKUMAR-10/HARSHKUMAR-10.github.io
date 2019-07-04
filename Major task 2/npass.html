@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Your Pass</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<style type="text/css">
+	body
+	{
+		margin: 5%;
+	}
+</style>
+<body>
+<a href="hostelhome.html" style="float: right;"><button type="button" class="btn btn-primary">Exit</button></a>
+	<center><h1>Your Pass</h1></center>
+	<center><table class="table table-striped">
+  
+  <tbody id="taBody">
+    
+  </tbody>
+</table></center>
+<br>
+<br>
+<br>
+<br>
+<div style="display: inline-block; width: 100%">
+	<div style="float: left;"><p style="font-weight: bold;"> Seal Of Institute </p></div>
+	<div style="float: right;"><p style="font-weight: bold;">Sign of Mentor/ Warden</p></div>
+</div>
+
+  
+</body>
+
+
+<script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBI4PXO13seM3rVu0yEEVSkOuflLjGG6Y0",
+    authDomain: "project1-400f9.firebaseapp.com",
+    databaseURL: "https://project1-400f9.firebaseio.com",
+    projectId: "project1-400f9",
+    storageBucket: "project1-400f9.appspot.com",
+    messagingSenderId: "243549019154"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+
+  <script type="text/javascript">
+  	$(document).ready(function(){
+
+  		var rootRef = firebase.database().ref().child("NightOut");
+  		rootRef.on("child_added", snap=>{
+
+  			var name = snap.child("Name").val();
+  			var hostel = snap.child("Hostel").val();
+  			var room = snap.child("Room").val();
+  			var reason = snap.child("Reason").val();
+  			var address = snap.child("Address").val();
+  			var datef = snap.child("From").val();
+        var datet = snap.child("To").val();
+  			var contact = snap.child("Contact").val();
+
+  		$("#taBody").html("<tr><th>"+"Name : "+"</th><td>"+name+"</td> </tr>"+"<tr><th>"+"Hostel : "+"</th><td>"+hostel+"</td></tr>"+"<tr><th>"+"Room : "+"</th><td>"+room+"</td></tr>"+"<tr><th>"+"Reason : "+"</th><td>"+reason+"</td></tr>"+"<tr><th>"+"Address : "+"</th><td>"+address+"</td></tr>"+"<tr><th>"+"From : "+"</th><td>"+datef+"</td></tr>"+"<tr><th>"+"To : "+"</th><td>"+datet+"</td></tr>"+"<tr><th>"+"Contact : "+"</th><td>"+contact+"</td></tr>");
+  		});
+
+  	});
+  </script>
+
+</html>
