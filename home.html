@@ -12,11 +12,12 @@
     margin: 0;
     background-attachment: fixed;
   }
-  .logo //for the logo 
+  .logo /*For the logo*/ 
   {
     margin-top: 2%;
     margin-left: 5%;
   }
+  /*For the header*/
   .header
   { 
    
@@ -41,15 +42,37 @@
     margin-right: 5%;
   }
 
+  @media(max-width: 766px)
+  {
+    .para
+  {
+    font-family: verdana;
+    color: white;
+    padding: 2%;
+    text-align: justify;
+    font-size: 100%;
+    float: right;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  }
+/*For the blackboard image  */
   .blackb
   {
-    position: center;
+    
     width: 50%;
     height: 50%;
     margin-top: 3%;
-    box-shadow: 10pc;
+    box-shadow: 10px;
   }
-  
+  @media(max-width: 766px)
+  {
+    .blackb
+  {
+    
+    display: none;
+  }
+  }
   .head1
 {
   
@@ -78,17 +101,69 @@
 /* for room photo gallery*/
 .photos {
   margin: 20px;
-  padding: 1.5%
+  padding: 1%
   float: left;
   width: 35%;
   
 }
 .photo {
   margin-bottom: 20px;
-  padding-bottom: 1.5%
+  padding-bottom: 1.5%;
   float: right;
   width: 50%;
   
+}
+
+@media(max-width: 768px)
+{
+  .photos {
+  margin-bottom: 20px;
+  padding-bottom: 1.5%;
+  display: block;
+  width: 50%;
+  
+}
+}
+/*for the note part*/
+.note
+{
+   margin: 20px;
+  padding: 1%
+  float: left;
+  width: 35%;
+  
+}
+
+@media(max-width: 766px)
+{
+  .note
+  {
+  display: none;
+  }
+}
+
+
+/*for the irst paragraph*/
+.intro
+{
+  
+  display: none;
+}
+@media(max-width: 766px)
+{
+  .intro
+{
+  width: 80%;
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+  font-family: verdana;
+  font-size: 100%;
+  border: 2px solid orange;
+  display: block;
+  text-align: justify;
+  margin:  10px;
+  padding: 5px;
+}
 }
 .space /*Space from the top*/
 {
@@ -137,11 +212,27 @@ hr
 <center>
 <img src="blackb.jpg" class="blackb">
 </center>
+
+
+<center>
+  <div class="intro">
+    <center>ACCOMODATION</center>
+    <br>
+    <p>Facilities fir the boys and girls are seperate within the UNIVERSITY </p>
+    <p>Caring ardens and the vigilantt security ensures a pleasent stay and allos the students to focus on their academics. The rooms and other places are air conditioned. The rooms have attached bathrooms and the sitting lounge equipped with sofa and cable TV.</p>
+  </div>
+</center>
+
+
 <center>
   <hr>
+  
 <div class="space">
   <img src="Girl.png" class="photos">
-  <img src="note.png" class="photo">
+  <img src="note.png" class="note">
+  <div class="intro">
+    It as my first time living in the hostel, my first time away from home. The caring wardens and the friendly atmosphere made me feel at home. The facilities are useful for studying effectively and peacefully.
+  </div>
 </div>
 </center>
 <center>
