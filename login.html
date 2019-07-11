@@ -1,182 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-	<title>Sign In</title>
+	<title>Log In</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase.js"></script>
+	<script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
 </head>
 <style type="text/css">
+	
 	body
 	{
 		background-image:url("loginbg.jpg");
 	}
-
-	.div /*For the body of the login section*/
+	.container
 	{
 		height: 50%;
-		max-width:500px;
+		max-width:480px;
 		border-radius: 25px;
 		background-color: rgba(255,255,255,0.2);
 		margin-top: 10%;
 
 	}
-
-	@media(max-width: 1024px)
-	{
-		.div
-		{
-		height: 65%;
-		max-width:70%;
-		border-radius: 25px;
-		background-color: rgba(255,255,255,0.2);
-		margin-top: 30%;
-			
-		}
-	}
-
-	.divh /*For the upper container section of the login body*/
-	{
-			background-image: url("https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX3486593.jpg");
-			overflow: hidden;
-            
-			height: 50%;
-			opacity: 0.8;
-			border-top-left-radius: 25px;
-			border-top-right-radius: 25px;
-	}
-
-	.divl /*For the lower section of the login body*/
-	{
-		padding: 2%;
-	}
-	tr
-	{
-		padding-left: 10%;
-		
-	}
-	td
-	{   
-		padding-right: 10%
-	}
-	.p
-	{
-		font-family: courier;
-		font-size: 30px;
-		font-weight: bolder;
-		color: white;
-		padding: 5%
-
-	}
-
-	.p1
-	{
-		font-family: arial;
-		color: White;
-		padding-left: 20%;
-		font-weight: bold;
-		font-size: 150%;
-	}
-
-	.text
-	{
-		width: 100%;
-		margin-bottom: 2%
-		padding:2%;
-	}
-
-	.a
-	{
-		font-family: arial;
-		color: white;
-		font-weight: bolder;
-		text-align: right;
-		font-size: 12px;
-		padding-left: 5%;
-	}
-
-	.a:hover /*To apply hover effect in the Remember me and forgot password part*/
-	{
-		color: blue;
-	}
-
-	.b
-	{
-		text-align: center;
-		padding-left:5%;
-		padding-right: 5%;
-	}
-
-	input[type=submit] /*Designing the button*/
-	{
-  		width: 100%;
-  		background-color: rgba(0,255,255,0.5);
-  		color: white;
-  		padding: 14px 20px;
-  		margin: 8px 0;
-  		border: none;
-  		border-radius: 25px;
-  
-	}
-
-	input[type=submit]:hover /*hover effect in the button*/
-	{
-  		background-color: rgba(0,255,255);
-
-
 </style>
 <body>
-	<center>
-	<div class="div">
-		<div class="divh">
-				<center><p class="p">SIGN IN</p></center>
-		</div>
-		<table width="100%"> 
-		<div class="divl">
-
-			<tr>
-				<td><p class="p1">Username</p></td>
-				<td><input type="text" name="Username" placeholder="Enter Username" class="text" id="name"></td>
-			</tr>
-			<tr>
-				<td><p class="p1">Password</p></td>
-				<td><input type="Password" name="Password" placeholder="Enter Password" class="text" id="password"></td>
-			</tr>
-			
-			<tr>
-				<td colspan="2" class="b">
-					<input type="submit" name="login" value="Login" style="padding-left: 5%" onclick="a()">
-				</td>	
-			</tr>
-		</div>
-	</table>
-	</div>	
-	</center>	
+<!-- The surrounding HTML is left untouched by FirebaseUI.
+     Your app may use that space for branding, controls and other customizations.-->
+     <center>
+<div class="container">
+<div id="firebaseui-auth-container"></div>
+<div id="loader">Loading...</div>
+</div>
+</center>
+<script type="text/javascript" src="firebase.js"></script>
+<script type="text/javascript" src="login.js"></script>
 </body>
-<script type="text/javascript">
-	function a()
-	{
-		var nme = document.getElementById("name").value;
-		var pss = document.getElementById("password").value;
-		if(nme=="")
-		{
-			alert("Please Enter Username")
-		}
-		else if(pss=="")
-		{
-			alert("Please Enter Password")
-		}
-		else if(nme!="harsh")
-		{
-			alert("Please Enter valid Username")
-		}
-		else if(pss!="1234")
-		{
-			alert("Please Enter valid Password")
-		}
-		else
-		{
-			window.location = "hostelhome.html"
-		}
-	}
-</script>
 </html>
