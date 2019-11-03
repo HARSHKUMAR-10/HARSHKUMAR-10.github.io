@@ -7,6 +7,6 @@
 		$message = "Name : ".$name.", Has requested for approval";
 		$headers = "From : hp15449@gmail.com";
 
-		mail($to, $subject, $message, $headers);
+		echo $name.", ".$email;
 	
 ?>
