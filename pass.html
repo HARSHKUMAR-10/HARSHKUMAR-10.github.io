@@ -28,7 +28,11 @@
 	<div style="float: left;"><p style="font-weight: bold;"> Seal Of Institute </p></div>
 	<div style="float: right;"><p style="font-weight: bold;">Sign of Mentor/ Warden</p></div>
 </div>
-
+<br>
+<form method="post" action="mail.php">
+  name <input type="text" name="name" id="name" display="none">
+  <input type="submit" name="submit" onsubmit="a()">
+</form>
 
 </body>
 
@@ -66,10 +70,17 @@
   			var date = snap.child("Date").val();
   			var contact = snap.child("Contact").val();
 
+        document.getElementById("name").value = name;
+
   		$("#taBody").html("<tr><th>"+"Name : "+"</th><td>"+name+"</td> </tr>"+"<tr><th>"+"Hostel : "+"</th><td>"+hostel+"</td></tr>"+"<tr><th>"+"Room : "+"</th><td>"+room+"</td></tr>"+"<tr><th>"+"Reason : "+"</th><td>"+reason+"</td></tr>"+"<tr><th>"+"Address : "+"</th><td>"+address+"</td></tr>"+"<tr><th>"+"Date : "+"</th><td>"+date+"</td></tr>"+"<tr><th>"+"Contact : "+"</th><td>"+contact+"</td></tr>");
   		});
 
   	});
+
+    a()
+    {
+      alert("bye;");
+    }
   </script>
 
 </html>
